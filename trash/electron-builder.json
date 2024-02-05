@@ -1,0 +1,21 @@
+{
+    "appId": "com.example.my-quasar-app",
+    "productName": "My Quasar App",
+    "directories": {
+        "output": "dist_electron"
+    },
+    "files": [
+        {
+            "from": "dist/spa",
+            "to": "dist_electron"
+        },
+        {
+            "from": "package.json",
+            "to": "dist_electron"
+        },
+        {
+            "from": "server.mjs",
+            "to": "dist_electron"
+        }
+    ]
+}

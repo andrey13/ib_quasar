@@ -1,0 +1,36 @@
+
+Structure for table:    O:\WORK\ZAKAZ 2023-06-15\DBF\ZAKAZ.DBF
+Number of data records: 206     
+Date of last update:    12/06/22
+Code Page:              1251    
+Field  Field Name      Type                Width    Dec   Index   Collate Nulls    Next    Step
+    1  ZNO             Numeric                10                             No
+    2  DATE1           Date                    8            Asc   Machine    No
+    3  DATE2           Date                    8            Asc   Machine    No
+    4  NUMB            Character              10            Asc   Machine    No
+    5  FIO             Character              80            Asc   Machine    No
+    6  OBSLUZ          Numeric                10      2                      No
+    7  MUSIC           Numeric                10      2                      No
+    8  ARENDA          Numeric                10      2                      No
+    9  MESTO           Character              80                             No
+   10  GOSTI           Numeric                10                             No
+   11  TIME            Character              10                             No
+   12  REKVIZIT        Character             200                             No
+   13  KNO             Numeric                10            Asc   Machine    No
+   14  COMMENT         Character             200                             No
+   15  AVANS           Numeric                10      2                      No
+   16  SUMMA           Numeric                10      2                      No
+   17  SUMMA1          Numeric                10      2                      No
+   18  DATETIME        DateTime                8                             No
+   19  USLUGI          Numeric                10      2                      No
+   20  ADMIN           Character              80                             No
+   21  POVOD           Character              20                             No
+   22  URNAME          Character              75                             No
+   23  FOPLAT          Character              30                             No
+   24  SKIDKA          Numeric                 4      2                      No
+   25  VIXOD           Numeric                10      2                      No
+** Total **                                  924
+
+
+
+            ${ZNO}, ${BNO}, ${KOL}, ${PRICE}, ${SUM}, ${VIXOD}, ${STATUS}, ${TARELKA}, '${REMARKA}'

@@ -1,0 +1,16 @@
+
+Structure for table:    O:\WORK\ZAKAZ 2023-06-15\DBF\ZAKLST.DBF
+Number of data records: 47665   
+Date of last update:    12/06/22
+Code Page:              1251    
+Field  Field Name      Type                Width    Dec   Index   Collate Nulls    Next    Step
+    1  ZNO             Numeric                10            Asc   Machine    No
+    2  BNO             Numeric                10            Asc   Machine    No
+    3  KOL             Numeric                10      3                      No
+    4  PRICE           Numeric                10      2                      No
+    5  STATUS          Numeric                10                             No
+    6  SUM             Numeric                10      2                      No
+    7  TARELKA         Numeric                10                             No
+    8  REMARKA         Character             200                             No
+    9  VIXOD           Numeric                10      2                      No
+** Total **                                  281

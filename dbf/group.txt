@@ -1,0 +1,9 @@
+
+Structure for table:    O:\WORK\ZAKAZ 2023-06-15\DBF\GROUP.DBF
+Number of data records: 87      
+Date of last update:    11/12/22
+Code Page:              1251    
+Field  Field Name      Type                Width    Dec   Index   Collate Nulls    Next    Step
+    1  NAME            Character              20                             No
+    2  GNO             Numeric                10            Asc   Machine    No
+** Total **                                   31

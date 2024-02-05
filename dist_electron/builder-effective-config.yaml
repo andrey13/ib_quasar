@@ -1,0 +1,13 @@
+directories:
+  output: dist_electron
+  buildResources: build
+appId: com.example.my-quasar-app
+productName: My Quasar App
+files:
+  - from: dist/spa
+    to: dist_electron
+  - from: package.json
+    to: dist_electron
+  - from: sqlite/d1
+    to: sqlite
+electronVersion: 25.3.0

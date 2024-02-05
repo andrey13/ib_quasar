@@ -1,0 +1,12 @@
+
+Structure for table:    O:\WORK\ZAKAZ 2023-06-15\DBF\CONFIG.DBF
+Number of data records: 1       
+Date of last update:    09/17/22
+Code Page:              1251    
+Field  Field Name      Type                Width    Dec   Index   Collate Nulls    Next    Step
+    1  TITLE1          Character             100                             No
+    2  TITLE2          Character             100                             No
+    3  TELEFON         Character              50                             No
+    4  TITLE3          Character             100                             No
+    5  TITLE4          Character             100                             No
+** Total **                                  451

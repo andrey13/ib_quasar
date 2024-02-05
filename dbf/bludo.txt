@@ -1,0 +1,16 @@
+
+Structure for table:    O:\WORK\ZAKAZ 2023-06-15\DBF\BLUDO.DBF
+Number of data records: 899     
+Date of last update:    11/12/22
+Code Page:              866     
+Field  Field Name      Type                Width    Dec   Index   Collate Nulls    Next    Step
+    1  BNO             Numeric                10            Asc   Machine    No
+    2  NAME            Character              80                             No
+    3  PRICE           Numeric                10      2                      No
+    4  GNO             Numeric                10            Asc   Machine    No
+    5  VIXOD           Character              10                             No
+    6  ED_IZM          Character              10                             No
+    7  KOL_ED          Numeric                10      2                      No
+    8  VES_ED_IZM      Numeric                10                             No
+    9  VES             Numeric                10                             No
+** Total **                                  161

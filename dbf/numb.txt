@@ -1,0 +1,11 @@
+
+Structure for table:    O:\WORK\ZAKAZ 2023-06-15\DBF\NUMB.DBF
+Number of data records: 2       
+Date of last update:    12/06/22
+Code Page:              866     
+Field  Field Name      Type                Width    Dec   Index   Collate Nulls    Next    Step
+    1  NAME            Character              10                             No
+    2  VALUE           Numeric                10                             No
+    3  Z_SNO           Character               3                             No
+    4  SNO_Z           Character               3                             No
+** Total **                                   27
