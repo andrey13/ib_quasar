@@ -27,5 +27,7 @@ export default route(function (/* { store, ssrContext } */) {
         history: createHistory(process.env.VUE_ROUTER_BASE)
     })
 
+    console.log('process.env.VUE_ROUTER_BASE = ', process.env.VUE_ROUTER_BASE)
+
     return Router
 })

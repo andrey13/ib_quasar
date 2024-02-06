@@ -63,12 +63,12 @@ module.exports = configure(function (/* ctx */) {
 
             vueRouterMode: "history", // available values: 'hash', 'history'
             // vueRouterBase,
-            // vueDevtools,
+            // vueDevtools: "true",
             // vueOptionsAPI: false,
 
             // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-            publicPath: '/',
+            //publicPath: 'ib_quasar',
             // analyze: true,
             // env: {},
             // rawDefine: {}

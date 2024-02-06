@@ -12,6 +12,7 @@ import ErrorNotFound from "pages/ErrorNotFound.vue"
 const routes = [
     {
         path: "/",
+        name: "home",
         component: MainLayout,
         children: [
             {
