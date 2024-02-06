@@ -5,14 +5,14 @@
 </template>
 
 <script setup>
-// import { onMounted } from "vue";
+import { onMounted } from "vue";
 // console.log("APP.VUE ----------------------------------------");
 
 defineOptions({
     name: "App",
 });
 
-// onMounted(() => {
-//     console.log("onMointed ----------------------------------------");
-// });
+onMounted(() => {
+    console.log("onMointed ----------------------------------------");
+});
 </script>
