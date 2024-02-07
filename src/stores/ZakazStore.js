@@ -7,9 +7,13 @@ export const useZakazStore = defineStore('zakaz', () => {
     const id_group = ref(0)
     const id_zaklst = ref(0)
     const id_bludo = ref(0)
+    const g_user = ref({ logon: false })
+    const user_logon = ref(false)
 
     const set_id_zakaz = (id) => { id_zakaz.value = id }
     const set_id_group = (id) => { id_group.value = id }
+    const user_on = () => { user_logon.value = true }
+    const user_off = () => { user_logon.value = false }
 
     return {
         id_zakaz,
@@ -18,5 +22,9 @@ export const useZakazStore = defineStore('zakaz', () => {
         id_bludo,
         set_id_zakaz,
         set_id_group,
+        g_user,
+        user_logon,
+        user_on,
+        user_off
     }
 })

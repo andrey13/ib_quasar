@@ -2,14 +2,7 @@
     <q-layout view="lHh Lpr lFf">
         <q-header elevated>
             <q-toolbar>
-                <q-btn
-                    flat
-                    dense
-                    round
-                    icon="menu"
-                    aria-label="Menu"
-                    @click="toggleLeftDrawer"
-                />
+                <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
                 <q-toolbar-title> ZakaZ </q-toolbar-title>
 
@@ -19,126 +12,76 @@
 
         <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
             <q-list>
-                <LeftMenuItem
-                    v-for="link in linksList"
-                    :key="link.link"
-                    v-bind="link"
-                />
-                <q-item clickable v-show="loginVisible">
-                    <q-item-section>
-                        <q-item-label>AAA</q-item-label>
-                    </q-item-section>
-                </q-item>
+                <LeftMenuItem v-for="link in linksList" :key="link.link" v-bind="link" />
             </q-list>
-            <q-btn
-                flat
-                dense
-                round
-                icon="menu"
-                aria-label="Menu"
-                @click="loginVisibleOn"
-            />
-            <q-btn
-                flat
-                dense
-                round
-                icon="menu"
-                aria-label="Menu"
-                @click="loginVisibleOff"
-            />
+
+            <q-item clickable @click="store.user_off">
+                <q-item-section avatar>
+                    <q-icon name="logout" />
+                </q-item-section>
+
+                <q-item-section>
+                    <q-item-label>Выход</q-item-label>
+                </q-item-section>
+            </q-item>
+
         </q-drawer>
 
-        <q-page-container
-            style="
+        <q-page-container style="
                 height: 100vh;
                 width: 100vw;
                 background-color: burlywood;
                 display: flex;
                 flex-wrap: wrap;
-            "
-        >
+            ">
+            <LoginPwd1 :dialogActive="!user_logon" @closeModal="store.user_on"></LoginPwd1>
             <router-view :key="$route.fullPath"></router-view>
         </q-page-container>
     </q-layout>
 </template>
 
+
+
 <script setup>
-{
-    /*  */
-}
-import { ref } from "vue";
-import LeftMenuItem from "components/LeftMenuItem.vue";
-import LoginPwd1 from "src/components/LoginPwd1.vue";
-import LoginPwd from "src/components/LoginPwd.vue";
-import { onMounted } from "vue";
-import { getCurrentInstance } from "vue";
-import route from "src/router";
-import { useRouter, useRoute } from "vue-router";
+{/* <LoginPwd1 v-show="loginVisible"></LoginPwd1> */ }
+import { ref } from "vue"
+import LeftMenuItem from "components/LeftMenuItem.vue"
+import { onMounted } from "vue"
+import { useRouter, useRoute } from "vue-router"
+import LoginPwd1 from "src/components/LoginPwd1.vue"
+import { useZakazStore } from 'src/stores/ZakazStore'
+import { storeToRefs } from 'pinia'
 
-// import { beforeRouteEnter } from "vue";
+const store = useZakazStore()
 
-const router = useRouter();
+const { g_user, user_logon, user_on, user_off } = storeToRefs(store)
 
 onMounted(() => {
-    console.log("onMointed ----------------------------------------1");
-    // const router = route();
-    router.push({ name: "login" });
-
-    // router
-    //     .isReady()
-    //     .then(() => {
-    //         router.push("login");
-    //         onsole.log("onMointed ----------------------------------------2");
-    //     })
-    //     .catch((error) => {
-    //         console.error("Failed to navigate to login due to error:", error);
-    //     });
-});
-
-// beforeRouteEnter((to, from, next) => {
-//     // Переход на другой маршрут
-//     next((vm) => {
-//         vm.$router.push("/login"); // замените '/your-route' на путь к вашему маршруту
-//     });
-// });
+    const router = useRouter()
+    // router.push({ name: "login" })
+})
 
 defineOptions({
     name: "MainLayout",
-});
+})
 
-const leftDrawerOpen = ref(false);
-const loginVisible = ref(true);
+const leftDrawerOpen = ref(false)
 
 const toggleLeftDrawer = () => {
-    leftDrawerOpen.value = !leftDrawerOpen.value;
-};
-
-const toggleLoginVisible = () => {
-    loginVisible.value = !loginVisible.value;
-    console.log("loginVisible.value = ", loginVisible.value);
-};
-
-const loginVisibleOn = () => {
-    loginVisible.value = true;
-    console.log("loginVisible.value = ", loginVisible.value);
-};
-
-const loginVisibleOff = () => {
-    loginVisible.value = false;
-    console.log("loginVisible.value = ", loginVisible.value);
-};
+    leftDrawerOpen.value = !leftDrawerOpen.value
+}
 
 const linksList = [
     {
         title: "Работа с заказами",
         // caption: "quasar.dev",
-        icon: "shopping_cart",
+        icon: "format_list_bulleted",
         link: "zakaz",
     },
     {
         title: "Ведение справочников",
         // caption: "github.com/quasarframework",
-        icon: "library_books",
+        icon: "edit_note",
         link: "vocab",
     },
     {
@@ -171,11 +114,11 @@ const linksList = [
         icon: "info",
         link: "about",
     },
-    {
-        title: "Выход",
-        // caption: "Community Quasar projects",
-        icon: "info",
-        link: "login",
-    },
-];
+    // {
+    //     title: "Выход",
+    //     // caption: "Community Quasar projects",
+    //     icon: "info",
+    //     link: "login",
+    // },
+]
 </script>
