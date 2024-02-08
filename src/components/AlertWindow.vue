@@ -1,5 +1,5 @@
 <template>
-    <q-dialog v-model="dialogVisible" persistent>
+    <q-dialog v-model="store.alert_active" persistent>
         <q-card>
 
             <q-card-section :class="`${props.bcolor} ${props.fcolor}`" align="center">
@@ -22,6 +22,20 @@
 
 import { defineProps, computed } from 'vue'
 import { ref, onUnmounted } from 'vue'
+import { useZakazStore } from 'src/stores/ZakazStore'
+import { storeToRefs } from 'pinia'
+
+const store = useZakazStore()
+
+const {
+    g_user,
+    user_logon,
+    alert_active,
+    user_on,
+    user_off,
+    alert_on,
+    alert_off
+} = storeToRefs(store)
 
 const props = defineProps({
     active: {
@@ -55,13 +69,13 @@ const emit = defineEmits(['closeAlert'])
 // let dialogVisible = ref(props.active)
 // let dialogVisible = ref(true)
 
-const dialogVisible = computed(() => {
-    return props.active
-})
+// const dialogVisible = computed(() => {
+//     return props.active
+// })
 
-const alert_style = computed(() => {
-    const style = `color: ${props.fcolor}; background-color: ${props.bcolor};`
-    return style
-})
+// const alert_style = computed(() => {
+//     const style = `color: ${props.fcolor}; background-color: ${props.bcolor};`
+//     return style
+// })
 
 </script>

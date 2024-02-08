@@ -35,8 +35,8 @@
                 flex-wrap: wrap;
             ">
             <LoginPwd :active="!user_logon" @closeModal="store.user_on"></LoginPwd>
-            <AlertWindow :active="alert_active" :title="'ВНИМАНИЕ!'" :text="'неправильное имя или пароль!'"
-                :bcolor="'bg-negative'" :fcolor="'text-yellow'" @closeAlert="store.alert_off">
+            <AlertWindow :title="'ВНИМАНИЕ!'" :text="'неправильное имя или пароль!'" :bcolor="'bg-negative'"
+                :fcolor="'text-yellow'" @closeAlert="store.alert_off">
             </AlertWindow>
             <router-view :key="$route.fullPath"></router-view>
         </q-page-container>

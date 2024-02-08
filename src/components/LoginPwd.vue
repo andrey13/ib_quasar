@@ -103,13 +103,17 @@ const startLoging = async () => {
 
     const result = await login_user(user.value, password.value)
 
+    console.log('result = ', result)
+
     if (result == 'YES') {
         emit('closeModal')
         console.log('patch')
         store.$patch((state) => {
             state.g_user.logon = true
+            state.alert_active = false
         })
         console.log('store.g_user.logon = ', store.g_user.logon)
+        console.log('store.alert_active = ', store.alert_active)
     } else {
         store.alert_on()
     }

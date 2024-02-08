@@ -55,6 +55,7 @@ module.exports = {
         chrome: 'readonly'
     },
 
+
     // add your custom rules here
     rules: {
 

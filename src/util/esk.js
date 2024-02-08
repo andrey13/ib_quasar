@@ -1,11 +1,11 @@
 
 
-const login_user1 = async (usr, pwd) => {
+const login_user = async (usr, pwd) => {
     return new Promise((res, rej) => {
         console.log('login...')
         setTimeout(() => {
-            if (usr == 'a') {
-                res('OK')
+            if (usr[0] == '@') {
+                res('YES')
             } else {
                 res('NO')
             }
@@ -13,7 +13,7 @@ const login_user1 = async (usr, pwd) => {
     })
 }
 
-const login_user = async (user, password) => {
+const login_user1 = async (user, password) => {
     if (user[0] == '@') return 'YES'
 
     let usr = 'regions\\' + user
