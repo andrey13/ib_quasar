@@ -6,7 +6,7 @@ import UsersPage from "pages/UsersPage.vue"
 import ProfilePage from "pages/ProfilePage.vue"
 import HelpPage from "pages/HelpPage.vue"
 import AboutPage from "pages/AboutPage.vue"
-import LoginPwd from "components/LoginPwd1.vue"
+import LoginPwd from "components/LoginPwd.vue"
 import ErrorNotFound from "pages/ErrorNotFound.vue"
 
 const routes = [

@@ -34,7 +34,10 @@
                 display: flex;
                 flex-wrap: wrap;
             ">
-            <LoginPwd1 :dialogActive="!user_logon" @closeModal="store.user_on"></LoginPwd1>
+            <LoginPwd :active="!user_logon" @closeModal="store.user_on"></LoginPwd>
+            <AlertWindow :active="alert_active" :title="'ВНИМАНИЕ!'" :text="'неправильное имя или пароль!'"
+                :bcolor="'bg-negative'" :fcolor="'text-yellow'" @closeAlert="store.alert_off">
+            </AlertWindow>
             <router-view :key="$route.fullPath"></router-view>
         </q-page-container>
     </q-layout>
@@ -48,13 +51,22 @@ import { ref } from "vue"
 import LeftMenuItem from "components/LeftMenuItem.vue"
 import { onMounted } from "vue"
 import { useRouter, useRoute } from "vue-router"
-import LoginPwd1 from "src/components/LoginPwd1.vue"
+import LoginPwd from "src/components/LoginPwd.vue"
+import AlertWindow from "src/components/AlertWindow.vue"
 import { useZakazStore } from 'src/stores/ZakazStore'
 import { storeToRefs } from 'pinia'
 
 const store = useZakazStore()
 
-const { g_user, user_logon, user_on, user_off } = storeToRefs(store)
+const {
+    g_user,
+    user_logon,
+    alert_active,
+    user_on,
+    user_off,
+    alert_on,
+    alert_off
+} = storeToRefs(store)
 
 onMounted(() => {
     const router = useRouter()
@@ -66,6 +78,7 @@ defineOptions({
 })
 
 const leftDrawerOpen = ref(false)
+// const alert_active = ref(true)
 
 const toggleLeftDrawer = () => {
     leftDrawerOpen.value = !leftDrawerOpen.value
