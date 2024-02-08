@@ -1,8 +1,17 @@
+//-----------------------------------------------------------------------------
+
 <template>
     <q-layout view="lHh Lpr lFf">
         <q-header elevated>
             <q-toolbar>
-                <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
+                <q-btn
+                    flat
+                    dense
+                    round
+                    icon="menu"
+                    aria-label="Menu"
+                    @click="toggleLeftDrawer"
+                />
 
                 <q-toolbar-title> ZakaZ </q-toolbar-title>
 
@@ -15,7 +24,8 @@
                 <LeftMenuItem v-for="link in linksList" :key="link.link" v-bind="link" />
             </q-list>
 
-            <q-item clickable @click="store.user_off">
+            <!-- кнопа ВЫХОД-------------------------------------- -->
+            <q-item clickable @click="store.logon_on">
                 <q-item-section avatar>
                     <q-icon name="logout" />
                 </q-item-section>
@@ -24,61 +34,54 @@
                     <q-item-label>Выход</q-item-label>
                 </q-item-section>
             </q-item>
-
         </q-drawer>
 
-        <q-page-container style="
+        <q-page-container
+            style="
                 height: 100vh;
                 width: 100vw;
                 background-color: burlywood;
                 display: flex;
                 flex-wrap: wrap;
-            ">
-            <LoginPwd :active="!user_logon" @closeModal="store.user_on"></LoginPwd>
-            <AlertWindow :title="'ВНИМАНИЕ!'" :text="'неправильное имя или пароль!'" :bcolor="'bg-negative'"
-                :fcolor="'text-yellow'" @closeAlert="store.alert_off">
+            "
+        >
+            <LoginPwd @closeLogon="store.logon_off"> </LoginPwd>
+            <AlertWindow
+                :title="'ВНИМАНИЕ!'"
+                :text="'неправильное имя или пароль!'"
+                :bcolor="'bg-negative'"
+                :fcolor="'text-yellow'"
+                @closeAlert="store.alert_off"
+            >
             </AlertWindow>
             <router-view :key="$route.fullPath"></router-view>
         </q-page-container>
     </q-layout>
 </template>
 
-
+//-----------------------------------------------------------------------------
 
 <script setup>
-{/* <LoginPwd1 v-show="loginVisible"></LoginPwd1> */ }
 import { ref } from "vue"
 import LeftMenuItem from "components/LeftMenuItem.vue"
-import { onMounted } from "vue"
-import { useRouter, useRoute } from "vue-router"
+// import { onMounted } from "vue"
+// import { useRouter, useRoute } from "vue-router"
 import LoginPwd from "src/components/LoginPwd.vue"
 import AlertWindow from "src/components/AlertWindow.vue"
-import { useZakazStore } from 'src/stores/ZakazStore'
-import { storeToRefs } from 'pinia'
+import { useZakazStore } from "src/stores/ZakazStore"
 
 const store = useZakazStore()
 
-const {
-    g_user,
-    user_logon,
-    alert_active,
-    user_on,
-    user_off,
-    alert_on,
-    alert_off
-} = storeToRefs(store)
-
-onMounted(() => {
-    const router = useRouter()
-    // router.push({ name: "login" })
-})
+// onMounted(() => {
+//     const router = useRouter()
+//     // router.push({ name: "login" })
+// })
 
 defineOptions({
     name: "MainLayout",
 })
 
 const leftDrawerOpen = ref(false)
-// const alert_active = ref(true)
 
 const toggleLeftDrawer = () => {
     leftDrawerOpen.value = !leftDrawerOpen.value

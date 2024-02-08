@@ -11,6 +11,6 @@
     "prettier.semi": false,
     "eslint.format.enable": true,
     "[vue]": {
-        "editor.defaultFormatter": "Vue.volar"
+        "editor.defaultFormatter": "Wscats.vue"
     }
 }

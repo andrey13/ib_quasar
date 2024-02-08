@@ -5,6 +5,7 @@
         }
     ],
     "settings": {
-        "prettier.semi": false
+        "prettier.semi": false,
+        "eslint.format.enable": true
     }
 }
